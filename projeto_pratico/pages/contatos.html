@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Styles.css">
+    <link rel="stylesheet" href="../css/contatos.css">
+    <title>The Batman | Contatos</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="../index.html"><img id="logo" src="../src/logo_bat.png" alt="The Batman"></a>
+
+        <nav class="desktop-nav">
+            <ul>
+                <a href="../index.html"><li>HOME</li></a>
+                <a href="./contatos.html" class="active"><li>CONTATOS</li></a>
+                <a href="./fotos.html"><li>FOTOS</li></a>
+                <a href="./comentarios.html"><li>COMENTÁRIOS</li></a>
+            </ul>
+        </nav>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="../index.html">HOME</a>
+        <a href="./contatos.html" class="active">CONTATOS</a>
+        <a href="./fotos.html">FOTOS</a>
+        <a href="./comentarios.html">COMENTÁRIOS</a>
+    </nav>
+
+    <!-- Formulário -->
+    <section id="contatos-container">
+        <div id="contatos-content">
+            <h1>Fale Conosco</h1>
+            <h3>Dúvidas sobre nossos serviços?</h3>
+            <p>Entre em contato com nossa equipe preenchendo o formulário abaixo.</p>
+
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Digite seu nome">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail">
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" placeholder="Em que podemos ajudar?"></textarea>
+            </div>
+
+            <button class="button">Enviar mensagem</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <img id="logo" src="../src/logo_bat.png" alt="The Batman"/>
+        <span>Todos os direitos reservados ©</span>
+        <span>Desenvolvido por: Petter Pablo</span>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+</html>

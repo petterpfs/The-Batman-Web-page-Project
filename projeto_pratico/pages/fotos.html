@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Styles.css">
+    <link rel="stylesheet" href="../css/fotos.css">
+    <title>The Batman | Fotos</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="../index.html"><img id="logo" src="../src/logo_bat.png" alt="The Batman"></a>
+
+        <nav class="desktop-nav">
+            <ul>
+                <a href="../index.html"><li>HOME</li></a>
+                <a href="./contatos.html"><li>CONTATOS</li></a>
+                <a href="./fotos.html" class="active"><li>FOTOS</li></a>
+                <a href="./comentarios.html"><li>COMENTÁRIOS</li></a>
+            </ul>
+        </nav>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="../index.html">HOME</a>
+        <a href="./contatos.html">CONTATOS</a>
+        <a href="./fotos.html" class="active">FOTOS</a>
+        <a href="./comentarios.html">COMENTÁRIOS</a>
+    </nav>
+
+    <!-- Título da seção -->
+    <section class="page-header">
+        <h1>Galeria de Fotos</h1>
+        <p>Confira as imagens exclusivas do filme</p>
+    </section>
+
+    <!-- Grade de fotos -->
+    <section id="galeria-container">
+        <div class="galeria-grid">
+            <div class="foto-card"><img src="../src/Bt_foto1.jpg" alt="Cena 1"></div>
+            <div class="foto-card"><img src="../src/Bt_foto2.jpg" alt="Cena 2"></div>
+            <div class="foto-card"><img src="../src/Bt_foto3.jpg" alt="Cena 3"></div>
+            <div class="foto-card"><img src="../src/bt_foto4.jpg" alt="Cena 4"></div>
+            <div class="foto-card"><img src="../src/bt_foto5.jpg" alt="Cena 5"></div>
+            <div class="foto-card"><img src="../src/bt_foto6.jpg" alt="Cena 6"></div>
+            <div class="foto-card"><img src="../src/bt_foto7.jpg" alt="Cena 7"></div>
+            <div class="foto-card"><img src="../src/bt_foto8.jpg" alt="Cena 8"></div>
+            <div class="foto-card"><img src="../src/bt_foto9.jpg" alt="Cena 9"></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <img id="logo" src="../src/logo_bat.png" alt="The Batman"/>
+        <span>Todos os direitos reservados ©</span>
+        <span>Desenvolvido por: Petter Pablo</span>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+</html>
